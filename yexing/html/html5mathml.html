@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html5mathml</title>
+</head>
+<body>
+    <math>
+        <mrow>
+            <msup>
+                <mi>a</mi>
+                <mn>2</mn>
+            </msup>
+            <mo>+</mo>
+            <musp>
+                <mi>b</mi>
+                <mn>2</mn>
+            </musp>
+            <mo>=</mo>
+            <musp>
+                <mi>c</mi>
+                <mn>2</mn>
+            </musp>
+        </mrow>
+    </math>
+<hr>
+    <math>
+        <mrow>
+            <mrow>
+                <msup>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                </msup>
+                <mo>+</mo>
+                <mrow>
+                    <mn>4</mn>
+                    <mo></mo>
+                    <!--mo 操作符、边界、分隔符-->
+                    <mi>x</mi>
+                    <!--mi 变量、函数名、常量-->
+                </mrow>
+                <mo>+</mo>
+                <mn>4</mn>
+            </mrow>
+            <!--mrow 将任意数目的子表达式水平的分成一组，起到分装作用-->
+            <mo>=</mo>
+            <mn>0</mn>
+            <!--mn 数字-->
+        </mrow>
+    </math>
+    <!--math 数学公式-->
+
+<!--//  mtext 文本  mspace 空格  ms 字符串-->
+<!--//  mfrac 由两个子表达式形成一个分数-->
+<!--//  msqrt 形成一个平方根-->
+<!--//  mroot 形成一个有特定指数的根式-->
+<!--//  mstyle 风格改变-->
+<!--//  msub 下标   msup 上标    msubsup上下标    munder 正下标    mover 正上标     munderover 正上下标     multiserints 多个垂直排列的施加于一个基的上标和下标-->
+
+<hr>
+
+<math>
+    <mrow>
+        <mi>A</mi>
+        <mo>=</mo>
+        <mfenced open="[" close="]">
+            <mtable>
+                <mtr>
+                    <mtd><mi>x</mi></mtd>
+                    <mtd><mi>y</mi></mtd>
+                </mtr>
+                <mtr>
+                    <mtd><mi>z</mi></mtd>
+                    <mtd><mi>w</mi></mtd>
+                </mtr>
+            </mtable>
+        </mfenced>
+    </mrow>
+</math>
+</body>
+</html>
