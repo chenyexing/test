@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html图像</title>
+</head>
+<body>
+<p>我跨越人山人海，<img src="xxx" alt="没有图啊" width="100" height="100" align="middle">看海</p>
+align 还可以是 top 和 bottom
+
+
+<!--  图像映射  -->
+
+<p>点击太阳或其他行星，注意变化：</p>
+
+<img src="../img/1.jpg" width="300" height="300" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+    <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+    <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+    <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>
+</body>
+</html>
