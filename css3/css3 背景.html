@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3 背景</title>
+</head>
+<style>
+    .div1{
+        background: url("../img/2.jpg") no-repeat;
+        background-size: 100px 100px;
+        padding-top: 80px;
+    }
+    .div2{
+         background: url("../img/2.jpg") no-repeat;
+         background-size: 100% 100%;
+         padding-top: 80px;
+     }
+    .div3{
+        border:1px solid crimson;
+        width: 200px;
+        height: 200px;
+        background: url("../img/3.png") no-repeat;
+        /*background-size: 500px 500px;*/
+        -webkit-background-origin:content-box;
+        background-origin:content-box;
+    }
+    body{
+        background-image: url(../img/2.jpg),url(../img/3.png);
+    }
+    .div4{
+        width: 300px;
+        height: 300px;
+        padding: 50px;
+        background-color: #b3f7ff;
+        background-clip: content-box;
+        border: 2px solid cadetblue;
+    }
+</style>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3">8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888</div>
+<p>66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666</p>
+<div class="div4">123456875641</div>
+</body>
+</html>

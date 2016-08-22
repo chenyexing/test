@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font-family: Arial,sans-serif;
+            font-weight: bolder;
+            font-size: 24px;
+        }
+        .parent1{
+            border: 3px solid black;
+        }
+        .child1 {
+            line-height: 150px;
+            text-align: center;
+        }
+
+        .parent2{
+            border: 3px solid black;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .parent2 img{
+            vertical-align: middle;
+        }
+
+        .parent3{
+            margin-top: 10px;
+            height: 150px;
+            border: 3px solid black;
+            position: relative;
+        }
+        .child3{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 50%;
+            height: 30%;
+            text-align: center;
+            background-color: #d3d3d3;
+        }
+
+        .parent4{
+            margin-top: 10px;
+            border: 3px solid black;
+            height: 150px;
+            padding: 5% 0;
+        }
+        .child4{
+            padding: 10% 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="parent1">
+    <div class="child1">①单行文本垂直居中</div>
+</div>
+<div class="parent2">
+    <img src="..." alt="②图片垂直居中">
+</div>
+<div class="parent3">
+    <span class="child3"></span>
+</div>
+
+</body>
+</html>

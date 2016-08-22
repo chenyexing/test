@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+        $(function () {
+
+            $(".aaa").hide();
+            function show() {
+                var x = $(".aaa").fadeIn();
+                console.log(x);
+                setTimeout("show()",5000);
+            }
+
+            setTimeout(function(){
+                var x = $(".aaa").fadeIn();
+            },5000);
+
+        })
+
+
+    </script>
+</head>
+<body>
+<div class="aaa container" style="text-align: center;margin-top: 100px">
+    <div class="y-m-t-60">
+        <a href="#" class="btn btn-info btn-lg">GITHUB</a>
+        <a href="#" class="btn btn-info btn-lg y-m-l-40">GITHUB</a>
+        <a href="#" class="btn btn-info btn-lg y-m-l-40">GITHUB</a>
+    </div>
+</div>
+</body>
+</html>

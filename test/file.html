@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="js/jquery.js"></script>-->
+    <style>
+        .y-input-file{
+            position: absolute;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            cursor: pointer
+        }
+        .y-file-a{
+            font-size: 16px;
+            padding: 6px 18px;
+            height: 20px;
+            line-height: 20px;
+            position: relative;
+            cursor: pointer;
+            color: #40aaf2;
+            border: 1px solid #40aaf2;
+            border-radius: 2px;
+            overflow: hidden;
+            display: inline-block;
+            /**display: inline;*/
+            /**zoom: 1;*/
+            font-weight: 700;
+            text-decoration: none;
+        }
+        /*.y-file-a:hover{*/
+            /*color: #444;*/
+            /*background: #eee;*/
+            /*border-color: #ccc;*/
+            /*text-decoration: none*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+
+
+<!--<h3>请选择图片文件：JPG/GIF</h3>-->
+<!--<form name="form0" id="form0" >-->
+    <!--<input type="file" name="file0" id="file0" multiple="multiple" />-->
+    <!--<br>-->
+    <!--<img src="" id="img0" >-->
+<!--</form>-->
+<!--<script>-->
+    <!--$(function () {-->
+        <!--$("#file0").change(function(){-->
+            <!--var objUrl = getObjectURL(this.files[0]) ;-->
+            <!--console.log("objUrl = "+objUrl) ;-->
+            <!--if (objUrl) {-->
+                <!--$("#img0").attr("src", objUrl) ;-->
+            <!--}-->
+        <!--}) ;-->
+        <!--//建立一個可存取到該file的url-->
+        <!--function getObjectURL(file) {-->
+            <!--var url = null ;-->
+            <!--if (window.createObjectURL!=undefined) { // basic-->
+                <!--url = window.createObjectURL(file) ;-->
+            <!--} else if (window.URL!=undefined) { // mozilla(firefox)-->
+                <!--url = window.URL.createObjectURL(file) ;-->
+            <!--} else if (window.webkitURL!=undefined) { // webkit or chrome-->
+                <!--url = window.webkitURL.createObjectURL(file) ;-->
+            <!--}-->
+            <!--return url ;-->
+        <!--}-->
+    <!--})-->
+
+<!--</script>-->
+
+
+
+<script type="text/javascript">
+    //下面用于图片上传预览功能
+    function setImagePreview(avalue) {
+        var docObj=document.getElementById("doc");
+
+        var imgObjPreview=document.getElementById("preview");
+        if(docObj.files &&docObj.files[0])
+        {
+//火狐下，直接设img属性
+            imgObjPreview.style.display = 'block';
+            imgObjPreview.style.width = '150px';
+            imgObjPreview.style.height = '180px';
+//imgObjPreview.src = docObj.files[0].getAsDataURL();
+
+//火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式
+            imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+        }
+        else
+        {
+//IE下，使用滤镜
+            docObj.select();
+            var imgSrc = document.selection.createRange().text;
+            var localImagId = document.getElementById("localImag");
+//必须设置初始大小
+            localImagId.style.width = "150px";
+            localImagId.style.height = "180px";
+//图片异常的捕捉，防止用户修改后缀来伪造图片
+            try{
+                localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+            }
+            catch(e)
+            {
+                alert("您上传的图片格式不正确，请重新选择!");
+                return false;
+            }
+            imgObjPreview.style.display = 'none';
+            document.selection.empty();
+        }
+        return true;
+    }
+
+</script>
+
+
+
+<!--<table width="100%" border="0" cellspacing="0" cellpadding="0">-->
+    <!--<tbody>-->
+
+    <!--<tr>-->
+        <!--<td align="center">-->
+        <a href="#" class="y-file-a" style="">
+            <input type="file" name="file" id="doc"  class="y-input-file" onchange="javascript:setImagePreview();">上传二维码
+        </a>
+            <!--<input type="file" name="file" id="doc" style="width:150px;" onchange="javascript:setImagePreview();">-->
+        <!--</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td height="101" align="center">-->
+            <!--<div id="localImag">-->
+                <!--<img id="preview" src="" alt="">-->
+            <!--</div>-->
+        <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+<!--</table>-->
+
+
+<!--<input type="file" class="">-->
+</body>
+</html>

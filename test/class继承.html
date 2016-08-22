@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+      'use strict';
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+        class Cat extends Animal{
+            say(){
+                alert("hello"+this.name+"!");
+            }
+        }
+        var animal = new Animal("666");
+        Animal.say();
+
+</script>
+<body>
+<iframe></iframe>
+</body>
+</html>

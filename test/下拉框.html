@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#select").on("change",function () {
+                var val= $(this).find("option:selected").attr('value');
+                $("[num="+val+"]").show().siblings().hide();
+
+//                console.log($("[num="+val+"]"))
+            });
+            $("[data-toggle='tooltip']" ).tooltip();
+            $.sn_message.msg("balabala~~");
+        })
+    </script>
+</head>
+<body>
+<select name="" id="select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+</select>
+<div class="div0">
+    <div class="div1" num="1">1111111111111111111111111</div>
+    <div class="div2" num="2" style="display: none">2222222222222222222222222</div>
+    <div class="div3" num="3" style="display: none">3333333333333333333333333</div>
+    <div class="div4" num="4" style="display: none">4444444444444444444444444</div>
+</div>
+
+<script  type="text/javascript">
+
+    function delayURL(url) {
+        var delay = document.getElementById("time").innerHTML;
+
+//        var delay = $("#time").html();
+        console.log(delay);
+//        if (delay > 0) {
+//           delay--;
+//           document.getElementById("time").innerHTML = delay;
+//
+//        } else {
+//            window.top.location.href = url
+//        }
+//        setTimeout("delayURL('" + url + "')", 1000)
+    }
+
+</script>
+
+<span id="time" style="background: red;font-size:18px;">8</span>
+
+秒钟之后自动跳转，如果不跳转，请点击下面链接
+
+<a href="目标页面.jsp">主题列表</a>
+
+<script type="text/javascript">
+
+    delayURL("http://www.jubaopay.com");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3 边框</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            border: 15px solid skyblue;
+            margin-bottom: 10px;
+        }
+        /* 圆角 */
+        .div1{
+            border-radius: 25px;
+        }
+        /* 阴影    10 左右  5 上下  7 距离 */
+        .div2{
+            box-shadow: 10px 5px 7px #72bde3;
+        }
+        /*边界图片*/
+        .div3{
+            -webkit-border-image: url("../img/3.png") 30 30 round;
+            -moz-border-image: url("../img/3.png") 30 30 round;
+            -o-border-image: url("../img/3.png") 30 30 round;
+            border-image: url("../img/3.png") 30 30 round;
+            /*图片平铺重复填充区域*/
+        }
+        .div4{
+            -webkit-border-image: url("../img/3.png") 30 30 stretch;
+            -moz-border-image: url("../img/3.png") 30 30 stretch;
+            -o-border-image: url("../img/3.png") 30 30 stretch;
+            border-image: url("../img/3.png") 30 30 stretch;
+            /*图片拉伸填充区域*/
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+
+</body>
+</html>
